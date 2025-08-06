@@ -106,13 +106,13 @@ def getentail():
     dataname='aman'
     joy, anger, sadness,disgust, fear,surprise =[], [], [], [], [], []
     kjoy, kanger, ksadness,  kdisgust, kfear, ksurprise= getsplitdataet(dataname,joy, anger, sadness,disgust, fear,surprise)
-    hypothesis = f'./hypothesis_final/hypothesis_{dataname.lower()}.csv'
+    hypothesis = f'data/template_final/template_{dataname.lower()}.csv'
     with open(hypothesis) as tf:
         template = csv.reader(tf)
     entaildict={}
     labels = ['joy', 'anger', 'sadness', 'surprise', 'disgust', 'noemo', 'fear']
     for labelname in labels:
-        result_file = f'/media/server01/sda2/zixiao/SAwithTime/code/zsl_nli_emotion_prompts-main/output/ER2TO11/SPromptselect/Spromptrank_{dataname}_{labelname}_template{str(len(template))}.txt'
+        result_file = f'output/Spromptrank_{dataname}_{labelname}_template{str(len(template))}.txt'
         print(result_file)
         if labelname=='joy':
             kv=kjoy
